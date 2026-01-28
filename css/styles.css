@@ -487,3 +487,412 @@ p {
     0px 1px 1px rgba(46, 47, 66, 0.16),
     0px 2px 1px rgba(46, 47, 66, 0.08);
 }
+/* window */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* rgba() */
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* double check ".is-open" */
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.modal-close-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* padding and cursor to lose standarts styles of Safari */
+
+  padding: 0;
+  cursor: pointer;
+}
+.modal-close-icon {
+  fill: #2e2f42;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+  background-color: #404bbf;
+  border: none;
+}
+
+.modal-close-button:hover .modal-close-icon,
+.modal-close-button:focus .modal-close-icon {
+  fill: #ffffff;
+}
+
+.modal-close-button:active {
+  background-color: #404bbf;
+}
+.modal-textarea {
+  resize: none;
+}
+/* ===== MODAL FORM ===== */
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-field {
+  margin-bottom: 8px; /* расстояние между полями */
+}
+
+.modal-field.modal-field-comment {
+  margin-bottom: 16px; /* comment обычно чуть дальше от checkbox */
+}
+
+.modal-label {
+  display: block;
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+
+.modal-input-wrap {
+  position: relative; /* нужно будет завтра для иконки внутри */
+}
+
+/* INPUTS */
+.modal-input {
+  width: 100%;
+  height: 40px; /* по макету */
+
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+
+  padding-left: 16px; /* пока без иконки */
+  padding-right: 16px;
+
+  outline: transparent;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* TEXTAREA */
+.modal-textarea {
+  width: 100%;
+  height: 120px;
+
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+
+  padding: 8px 16px;
+
+  outline: transparent;
+  resize: none; /* у тебя уже есть, но пусть будет здесь логически */
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-textarea::placeholder {
+  color: rgba(46, 47, 66, 0.4);
+}
+
+/* FOCUS (D3): рамка меняет цвет */
+.modal-input:focus,
+.modal-textarea:focus {
+  border-color: #4d5ae5;
+}
+.modal {
+  position: relative;
+
+  width: 408px;
+  min-height: 584px;
+
+  padding: 72px 24px 24px;
+
+  background-color: #fcfcfc;
+
+  border-radius: 4px;
+
+  box-shadow:
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(46, 47, 66, 0.4);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* когда открыт */
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.modal-submit-btn {
+  display: block;
+  min-width: 169px;
+  height: 56px;
+  margin: 0 auto;
+
+  border: none;
+  border-radius: 4px;
+
+  background-color: #4d5ae5;
+  color: #ffffff;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-submit-btn:hover,
+.modal-submit-btn:focus {
+  background-color: #404bbf;
+}
+.modal-checkbox-wrap {
+  margin-bottom: 24px;
+}
+.modal-title {
+  margin-bottom: 16px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  color: #2e2f42;
+}
+
+.modal-checkbox-label {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+
+/* квадратик */
+.modal-custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+
+  fill: transparent;
+
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* галочка будет видна только когда checked (через fill) */
+.modal-checkbox:checked + .modal-checkbox-label .modal-custom-checkbox {
+  background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
+}
+
+.privacy-link {
+  color: #4d5ae5;
+  text-decoration: underline;
+}
+/* ===== FOOTER LAYOUT (3 columns) ===== */
+.container-footer {
+  display: flex;
+  align-items: baseline;
+  gap: 80px; /* как в типовом макете WebStudio */
+}
+
+/* чтобы первый блок (лого+текст) не растягивался */
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.p-footer {
+  margin-top: 0; /* у тебя было margin-top:16px; но лучше держать через logo margin */
+  max-width: 264px;
+  color: #f4f4fd;
+}
+
+/* SOCIAL */
+.footer-social-title,
+.footer-subscribe-title {
+  margin-bottom: 16px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+
+  color: #ffffff;
+}
+
+/* ===== SUBSCRIBE FORM ===== */
+.footer-subscribe-form {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-subscribe-input {
+  width: 264px;
+  height: 40px;
+
+  padding-left: 16px;
+
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+
+  background-color: transparent;
+  color: #ffffff;
+
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  outline: transparent;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-subscribe-input::placeholder {
+  color: #ffffff;
+}
+
+.footer-subscribe-input:focus {
+  border-color: #4d5ae5;
+}
+
+.footer-subscribe-btn {
+  min-width: 165px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  padding: 8px 24px;
+
+  border: none;
+  border-radius: 4px;
+
+  background-color: #4d5ae5;
+  color: #ffffff;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-subscribe-btn:hover,
+.footer-subscribe-btn:focus {
+  background-color: #404bbf;
+}
+
+.footer-subscribe-icon {
+  fill: #ffffff;
+}
+/* test */
+/* чтобы в инпуте было место под иконку */
+.modal-input {
+  padding-left: 38px; /* было 16px — увеличиваем под иконку */
+}
+
+/* сама иконка внутри поля */
+.modal-input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  fill: #2e2f42;
+  pointer-events: none;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* D3: на фокусе меняется цвет рамки и иконки */
+.modal-input:focus + .modal-input-icon {
+  fill: #4d5ae5;
+}
+.modal-checkbox:checked + .modal-checkbox-label .modal-custom-checkbox {
+  background-color: #4d5ae5;
+  border-color: #4d5ae5;
+}
+
+.modal-checkbox:checked + .modal-checkbox-label .modal-checkbox-icon {
+  opacity: 1;
+}
+.modal-checkbox-icon {
+  fill: #f4f4fd; /* белая галочка */
+  opacity: 0; /* СКРЫТА */
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
