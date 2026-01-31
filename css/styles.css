@@ -269,10 +269,6 @@ p {
   border-right: 1px solid #e7e9fc;
 }
 
-.container-footer {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
 .container {
   max-width: 1158px; /* ширина из макета */
   margin: 0 auto; /* центрирует по горизонтали */
@@ -381,11 +377,7 @@ p {
   width: 40px;
   height: 40px;
 }
-.container-footer {
-  display: flex;
-  align-items: baseline;
-  gap: 120px; /* расстояние между блоками */
-}
+
 .footer-social-title {
   margin-bottom: 16px;
   font-weight: 500;
@@ -754,12 +746,6 @@ p {
   color: #4d5ae5;
   text-decoration: underline;
 }
-/* ===== FOOTER LAYOUT (3 columns) ===== */
-.container-footer {
-  display: flex;
-  align-items: baseline;
-  gap: 80px; /* как в типовом макете WebStudio */
-}
 
 /* чтобы первый блок (лого+текст) не растягивался */
 .footer-logo {
@@ -820,7 +806,7 @@ p {
 }
 
 .footer-subscribe-input:focus {
-  border-color: #4d5ae5;
+  border-color: #31d0aa;
 }
 
 .footer-subscribe-btn {
@@ -852,7 +838,7 @@ p {
 
 .footer-subscribe-btn:hover,
 .footer-subscribe-btn:focus {
-  background-color: #404bbf;
+  background-color: #31d0aa;
 }
 
 .footer-subscribe-icon {
@@ -893,4 +879,21 @@ p {
   fill: #f4f4fd; /* белая галочка */
   opacity: 0; /* СКРЫТА */
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.container-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.footer-left {
+  display: flex;
+  gap: 120px;
+}
+.footer-social {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-social-title {
+  margin-bottom: 16px;
 }
